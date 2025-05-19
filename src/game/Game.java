@@ -47,7 +47,7 @@ public class Game {
     private void loop() {
         while (!window.shouldClose()) {
             playerModel.move();
-
+            map.events();
             //System.out.println(player.cframe);
 
             renderer.render();

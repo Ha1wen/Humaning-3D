@@ -21,7 +21,7 @@ public class PlayerModel {
         rod = new Box(
             new CFrame(),
             new Vector3(0.01f, 0.5f, 0.5f),
-            "res/Rod.png"
+            Color.RED
         );
 
 
@@ -40,9 +40,7 @@ public class PlayerModel {
         if (controller==null) return;
 
         controller.update();
-        rod.cframe = camera.cframe;
-
-        //System.out.println(cframe);
+        rod.cframe = cframe;
 
         updateCam();
     }

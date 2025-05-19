@@ -40,6 +40,10 @@ public class Object3D {
         this.cframe.rotation = this.cframe.rotation.add(rotationOffset);
     }
 
+    public CFrame getCFrame() {
+        return cframe;
+    }
+
     // transform applies both position and rotation offsets at once
     public void transform(Vector3 positionOffset, Vector3 rotationOffset) {
         move(positionOffset);

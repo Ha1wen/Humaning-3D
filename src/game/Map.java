@@ -35,6 +35,10 @@ public class Map {
         objects.add(pond);
     }   
 
+    public void events() {
+        //pond.cframe = pond.cframe.add(new CFrame(0.1f, 0.1f, 0.1f));
+    }
+
     public ArrayList<Object3D> getObjects() {
         return objects;
     }
