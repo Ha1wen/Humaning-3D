@@ -1,0 +1,58 @@
+{
+
+    "Common" : {
+        "Guy"   : {"desc" : "Just a guy"},
+        "Fella" : {"desc" : "Just a fella"},
+        "Bob"   : {"desc" : "Just a bob"},
+        "Lad"   : {"desc" : "Just a lad"},
+        "Chap"   : {"desc" : "Just a chap"}
+    },
+
+    "Uncommon" : {
+        "Gamer" : {"desc" : "Intense video gamer"},
+        "Artist" : {"desc" : "Skilled in their art"},
+        "Gambler" : {"desc" : "Go big or go home"},
+        "Musician"   : {"desc" : "Better than Kendrick"},
+        "Student"   : {"desc" : "He just like me fr"}
+    },
+
+    "Rare" : {
+        "Mikolaj" : {"desc": "Stole my name"},
+        "Mark" : {"desc": "Magnus Karlson"},
+        "Anel" : {"desc": "Goofy ahh"},
+        "Alex" : {"desc": "D1 Clarnet player"},
+        "Adis" : {"desc": "Gulp gulp gulp"},
+        "Nick" : {"desc": "My pookie bear <3"}
+    },
+
+    "Epic" : {
+        "Mrs Fisher" : {"desc": "Goated teacher"},
+        "Mr Beast" : {"desc": "MR BEAST"},
+        "Markiplier" : {"desc": "Was that the byte of 87?"},
+        "Elon Musk" : {"desc": "Invest in DOGE"},
+        "Barrack Obama" : {"desc" : "My fellow americans"},
+        "Joe Biden" : {"desc": "Chocolate chocolate chip"},
+        "Andrew Tate" : {"desc": "Hustlers university"},
+        "Tristan Tate" : {"desc": "Sippin on sum Johnnie Walker"}
+    },
+
+    "Mythical" : {
+        "Packets Guy" : {"desc": "Some kids can't learn like that"},
+        "Chopped Chin" : {"desc" : "Bruh"},
+        "Crewmate" : {"desc" : "Sus"},
+        "Joe Swanson" : {"desc": "I'm a paraplegic, peter"},
+        "Creeper" : {"desc": "Aww man"},
+        "Peter Griffin" : {"desc": "Meheheh"},
+        "Ugana Knuckles" : {"desc": "Do u know da way?"},
+        "Doge" : {"desc": "Awesome!"},
+        "Retep" : {"desc": "My nme is retep, and I am evil!"}
+    },
+
+    "Legendary" : {
+        "Ethan" : {"desc": "Pinicle of human evolution"},
+        "Eye of Rah" : {"desc": "Ayyo chill tf out"},
+        "Mr Washee Washee" : {"desc": "You clean more"},
+        "Hatsune Miku" : {"desc": "Only Miku"},
+        "Big Chungus" : {"desc": "Big Chungus"}
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "Common"    : {"chance": 1,       "price": 10,    "color": "gray"},
+    "Uncommon"  : {"chance": 4,       "price": 50,    "color": "green"},
+    "Rare"      : {"chance": 16,      "price": 250,   "color": "blue"},
+    "Epic"      : {"chance": 64,      "price": 1000,   "color": "purple"},
+    "Mythical"  : {"chance": 256,     "price": 5000,  "color": "red"},
+    "Legendary" : {"chance": 1024,    "price": 25000,  "color": "yellow"}
+}
