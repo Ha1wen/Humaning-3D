@@ -21,7 +21,7 @@ public class PlayerModel {
         rod = new Box(
             new CFrame(),
             new Vector3(0.01f, 0.5f, 0.5f),
-            Color.RED
+            "res/Rod.png"
         );
 
 
@@ -38,9 +38,9 @@ public class PlayerModel {
 
     public void move() {
         if (controller==null) return;
-
+        float rot = (float)Math.toRadians(cframe.rotation.y+ 30);
         controller.update();
-        rod.cframe = cframe;
+        rod.cframe = new CFrame(cframe.position.scale(-1), new Vector3(cframe.rotation.x, -cframe.rotation.y, 0)).add(new Vector3(0.5f * (float)Math.sin(rot), 3f, -0.5f * (float)Math.cos(rot)));
 
         updateCam();
     }

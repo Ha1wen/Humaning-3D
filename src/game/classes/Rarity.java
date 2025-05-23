@@ -1,5 +1,7 @@
 package classes;
 
+import engine.classes.*;
+
 public class Rarity {
     private final String name;
     private final String color;
@@ -21,8 +23,8 @@ public class Rarity {
         return color;
     }
 
-    public String getColor() {
-        return "{"+color+"}";
+    public Color getColor() {
+        return Color.get(color);
     }
     
     public int getPrice() {

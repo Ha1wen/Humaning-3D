@@ -1,5 +1,7 @@
 package engine.classes;
 
+import java.util.Map;
+
 public class Color {
     public float r, g, b;
 
@@ -12,6 +14,18 @@ public class Color {
     public static final Color CYAN   = new Color(0f, 1f, 1f);
     public static final Color MAGENTA= new Color(1f, 0f, 1f);
     public static final Color GRAY   = new Color(0.5f, 0.5f, 0.5f);
+
+    public static final Map<String, Color> COLORS = Map.of(
+        "WHITE", WHITE,
+        "BLACK", BLACK,
+        "RED", RED,
+        "GREEN", GREEN,
+        "BLUE", BLUE,
+        "YELLOW", YELLOW,
+        "CYAN", CYAN,
+        "MAGENTA", MAGENTA,
+        "GRAY", GRAY
+    );
 
     public Color() {
         this(1f, 1f, 1f); // Default: white
@@ -27,6 +41,11 @@ public class Color {
         this.r = clamp(r / 255f);
         this.g = clamp(g / 255f);
         this.b = clamp(b / 255f);
+    }
+
+    public static Color get(String name) {
+        Color color = COLORS.get(name.toUpperCase());
+        return color != null ? color : Color.WHITE;
     }
 
     public Color copy() {

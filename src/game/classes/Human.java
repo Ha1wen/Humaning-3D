@@ -3,7 +3,7 @@ package classes;
 import java.util.Arrays;
 import java.util.List;
 
-import Screen;
+import engine.classes.Color;
 
 public class Human {
     private final String name;
@@ -40,7 +40,7 @@ public class Human {
         return rarity.getChance();
     }
 
-    public String getColor() {
+    public Color getColor() {
         return rarity.getColor();
     }
 
@@ -48,34 +48,8 @@ public class Human {
         return rarity.getColorName();
     }
 
-    public String getProperties() {
-        String propertyColor = "{R;ITALIC;SOFT}";
-
-        List<String> properties = Arrays.asList(
-            "Rarity",       "{BOLD}"+getColor()+getRarity(),
-            "Name",         getColor()+name,
-            "Desc",  getDesc(),
-            "Chance",       "1 in "+getChance(),
-            "Price",        "{darkgreen}$"+getPrice()
-        );
-
-        String string = "";
-        int c=0;
-
-        for (String property: properties) {
-            if (c++%2==0) {
-                string+=" "+propertyColor+Screen.align(property, 7)+"{R}: ";
-            } else {
-                string+=property+"{R}";
-                if (c+1<properties.size()) string+="\n";
-            }
-        }
-
-        return string;
-    }
-
     @Override
     public String toString() {
-        return "{BOLD}"+getColor()+getRarity()+" : {R}"+getColor()+name+"{R}";
+        return getRarity()+" "+getName();
     }
 }

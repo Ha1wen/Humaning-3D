@@ -23,7 +23,7 @@ public class Window {
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
         //glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-        windowHandle = glfwCreateWindow(width, height, title, NULL, NULL);
+        windowHandle = glfwCreateWindow(width, height, title, glfwGetPrimaryMonitor(), NULL);
         if (windowHandle == NULL)
             throw new RuntimeException("Failed to create the GLFW window");
 

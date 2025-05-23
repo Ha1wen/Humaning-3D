@@ -18,7 +18,7 @@ public class Controller {
     private double lastMouseX, lastMouseY;
     private boolean firstMouse = true;
 
-    public float speed = 0.02f;
+    public float speed = 0.06f;
     public float sensitivity = 0.2f;
 
     public Controller(Window window, CFrame cframe, Mode mode) {

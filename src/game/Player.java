@@ -5,6 +5,7 @@ import engine.Camera;
 import engine.Controller;
 import engine.classes.CFrame;
 import engine.objects.PlayerModel;
+import util.Rods;
 
 public class Player {
     private static final String BAR_COLOR = "{backdarkblack}";
@@ -13,6 +14,9 @@ public class Player {
     private String name;
 
     private PlayerModel model;
+    private UserInterface ui;
+
+    public boolean caught;
 
     public Player(String playerName) {
         inventory = new Inventory();
@@ -20,7 +24,30 @@ public class Player {
         name = playerName;
 
         model = null;
+        caught = false;
     }
+
+    public PlayerModel getModel() {
+        return model;
+    }
+
+    public Rod getNextRod() {
+        return Rods.getRod(Rods.getIndex(inventory.getRod())+1);
+    }
+
+    public Human getCurrentHuman() {
+        if (inventory.getAmount() <=0) return null;
+        return inventory.getHumans().getLast();
+    }
+
+    public void setUI(UserInterface ui) {
+        this.ui = ui;
+    }
+
+    public UserInterface getUI() {
+        return ui;
+    }
+
 
     public void setModel(PlayerModel model) {
         this.model = model;
@@ -57,8 +84,8 @@ public class Player {
 
     public int sellHumans() {
         int total = inventory.getWorth();
-        for (int i = 0; i<inventory.getAmount(); i=0) {
-            sellHuman(0);
+        for (int i = 1; i<=inventory.getAmount(); i++) {
+            sellHuman(1);
         }
 
         return total;

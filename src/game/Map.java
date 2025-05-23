@@ -10,8 +10,17 @@ public class Map {
     private Object3D floor;
     private Object3D skybox;
     private Object3D pond;
+    private Object3D sell;
+    private Object3D upgrade;
 
-    public Map() {
+    private Player player;
+    private PlayerModel playerModel;
+    private UserInterface ui;
+
+    public Map(Player player) {
+        this.player = player;
+        this.playerModel = player.getModel();
+        this.ui = player.getUI();
         objects = new ArrayList<>();
 
         floor = new Box(
@@ -29,14 +38,31 @@ public class Map {
             new Vector3(15, 1.1f, 5), 
             "res/Water.jpg"
         );
+        sell = new Box(
+            new CFrame(-7.5f, 1, 0f), 
+            Vector3.ONE,
+            "res/Money.jpeg"
+        );
+        upgrade = new Box(
+            new CFrame(7.5f, 1, 0f), 
+            Vector3.ONE,
+            "res/Upgrade.jpeg"
+        );
 
         objects.add(floor);
         objects.add(skybox);
         objects.add(pond);
+        objects.add(sell);
+        objects.add(upgrade);
     }   
 
     public void events() {
         //pond.cframe = pond.cframe.add(new CFrame(0.1f, 0.1f, 0.1f));
+        ui.fishingPrompt = playerModel.cframe.position.z >= 3;
+        ui.sellingPrompt = playerModel.cframe.position.distance(sell.cframe.position.scale(-1)) < 5;
+        ui.buyingPrompt = playerModel.cframe.position.distance(upgrade.cframe.position.scale(-1)) < 5;
+
+        //System.out.println(playerModel.cframe.position.distance(pond.cframe.position.scale(-1)));
     }
 
     public ArrayList<Object3D> getObjects() {

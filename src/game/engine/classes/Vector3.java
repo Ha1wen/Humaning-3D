@@ -44,6 +44,11 @@ public class Vector3 {
         );
     }
 
+    public float distance(Vector3 other) {
+        Vector3 diff = subtract(other);
+        return (float)Math.sqrt(Math.pow(diff.x, 2) + Math.pow(diff.y, 2) + Math.pow(diff.z, 2));
+    }
+
     public float length() {
         return (float) Math.sqrt(x * x + y * y + z * z);
     }

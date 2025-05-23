@@ -26,6 +26,15 @@ public class Rods {
         return rods;
     }
 
+    public static int getIndex(Rod iRod) {
+        for(int i = 0; i<rods.size(); i++) {
+            Rod rod = rods.get(i);
+            if (rod.getRarity().equals(iRod.getRarity()))
+                return i;
+        }
+        return -1;
+    }
+
     public static Rod getRod(int index) {
         return rods.get(index);
     }
@@ -54,41 +63,5 @@ public class Rods {
         }
 
         return longest;
-    }
-
-    public static String getString(boolean prices, int sold) {
-        String string = "";
-        int nameSpace = getLongestName().length();
-        int raritySpace = getLongestRarity().length();
-
-        int c = 1;
-        for (Rod rod: rods) {
-            String color = rod.getColorName();
-            String rarity = rod.getRarity();
-            String name = rod.getName();
-            String price = "$"+rod.getPrice();
-            String soldEffect = ";SOFT;STROKE";
-
-            if (!(sold == c || sold ==0)) soldEffect = "";
-
-            string+=" {R,ITALIC;SOFT}"+c;
-            string+=" {R;BOLD;"+color+soldEffect+"}"+Screen.align(rarity, raritySpace);
-            string+=" {R"+soldEffect+"}: "+Screen.align(name, nameSpace);
-
-            if (prices) string+="{R"+soldEffect+"} : {green}"+price+"{R}";
-
-            if (c++ < rods.size()) {
-                string += "\n";
-            }
-        }
-        return string;
-    }
-
-    public static String getString(boolean prices) {
-        return getString(prices, -1);
-    }
-
-    public static String getString() {
-        return getString(false);
     }
 }

@@ -3,7 +3,6 @@ package classes;
 
 import java.util.ArrayList;
 
-import Screen;
 import util.Rods;
 
 public class Inventory {
@@ -57,6 +56,10 @@ public class Inventory {
         return humans.get(index-1);
     }
 
+    public int getSpace() {
+        return getSize() - getAmount();
+    }
+
     public int getSize() {
         return size;
     }
@@ -106,53 +109,6 @@ public class Inventory {
         }
 
         return longest;
-    }
-
-    public String toString(boolean prices, int sold) {
-        String string = "";
-        int nameSpace = getLongestName().length();
-        int raritySpace = getLongestRarity().length();
-
-        if (!prices) {
-            string+="{ITALIC}Rod:\n {R,BOLD} "+rod+"{R}\n\n";
-
-            if (getAmount() > 0) string+= "{ITALIC}Humans:{R}\n";
-        }
-
-        if (prices && getAmount() >1) {
-            string+=" {R;ITALIC;SOFT}0{R} All : {green}$"+getWorth()+"{R}\n\n";
-        }
-
-        int c = 1;
-        for (Human human: humans) {
-            String color = human.getColorName();
-            String rarity = human.getRarity();
-            String name = human.getName();
-            String price = "$"+human.getPrice();
-            String soldEffect = ";SOFT;STROKE";
-
-            if (!(sold == c || sold ==0)) soldEffect = "";
-
-            string+=" {R,ITALIC;SOFT}"+c;
-            string+=" {R;BOLD;"+color+soldEffect+"}"+Screen.align(rarity, raritySpace);
-            string+=" {R"+soldEffect+"}: "+Screen.align(name, nameSpace);
-
-            if (prices) string+="{R"+soldEffect+"} : {green}"+price+"{R}";
-
-            if (c++ < humans.size()) {
-                string += "\n";
-            }
-        }
-        return string;
-    }
-
-    public String toString(boolean prices) {
-        return toString(prices, -1);
-    }
-
-    @Override
-    public String toString() {
-        return toString(false, -1);
     }
 
     public Rod getRod() {
